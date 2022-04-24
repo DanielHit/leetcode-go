@@ -8,7 +8,7 @@ func TestTwoSum(t *testing.T) {
 	nums := []int{3, 2, 4}
 	target := 6
 	res := twoSum(nums, target)
-	if res[0] != 1 || res[1] == 2 {
+	if res[0] != 1 || res[1] != 2 {
 		t.Fail()
 	}
 
