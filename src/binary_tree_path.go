@@ -16,6 +16,7 @@ func binaryTreePaths(root *TreeNode) []string {
 	if root == nil {
 		return []string{}
 	}
+
 	if root.Left == nil && root.Right == nil {
 		return []string{strconv.Itoa(root.Val)}
 	}

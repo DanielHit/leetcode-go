@@ -1,2 +1,1 @@
-# leetcode-go
-* leetcode problem solve algorithm
+# leetcode algorithm problem solution list
