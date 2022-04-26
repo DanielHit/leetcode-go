@@ -8,7 +8,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// recursive algorithm
+/**
+1. problem: https://leetcode.com/problems/binary-tree-paths/
+2. solution: use recursive method
+*/
 func binaryTreePaths(root *TreeNode) []string {
 	if root == nil {
 		return []string{}
