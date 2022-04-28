@@ -1,6 +1,6 @@
 package src
 
-// https://leetcode.com/problems/maximum-equal-frequency/
+//problem: https://leetcode.com/problems/maximum-equal-frequency/
 func maxEqualFreq(nums []int) int {
 	if isSubArrayEqualFreq(nums) {
 		return len(nums)
