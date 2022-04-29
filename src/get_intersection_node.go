@@ -1,5 +1,7 @@
 package src
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -7,6 +9,11 @@ type ListNode struct {
 
 // problem: https://leetcode.com/problems/intersection-of-two-linked-lists/
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
+
+	// 开头就类似的
+	if headA == headB {
+		return headA
+	}
 
 	aCount := 1
 	bCount := 1
@@ -31,45 +38,40 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 		return nil
 	}
 
+	fmt.Println("into ")
+
 	pA = headA
 	pB = headB
 
+	indexA := &ListNode{}
+	indexB := &ListNode{}
+
 	diff := aCount - bCount
-	if diff == 0 {
-		if pA == pB {
-			return pA
-		}
-
-		for pA.Next != pB.Next {
-			pA = pA.Next
-			pB = pB.Next
-		}
-		return pA.Next
-
-	} else if diff > 0 {
-		// a的链路长
-		indexP := headA
+	if diff > 0 {
+		indexA = headA
 		for diff > 0 {
-			indexP = indexP.Next
+			indexA = indexA.Next
 			diff--
 		}
-		for indexP.Next != pB.Next && indexP.Next != nil {
-			indexP = indexP.Next
-			pB = pB.Next
-		}
-		return indexP.Next
+		indexB = headB
 	} else {
-		// b的链路长
 		diff = diff * -1
-		indexP := headB
+		indexB = headB
 		for diff > 0 {
-			indexP = indexP.Next
+			indexB = indexB.Next
 			diff--
 		}
-		for indexP.Next != pA.Next && indexP.Next != nil {
-			indexP = indexP.Next
-			pA = pA.Next
-		}
-		return indexP.Next
+		indexA = headA
 	}
+
+	for indexA != indexB && indexA != nil && indexB != nil {
+		indexA = indexA.Next
+		indexB = indexB.Next
+	}
+	if indexB == indexA && indexA != nil {
+		return indexA
+	} else {
+		return nil
+	}
+
 }
