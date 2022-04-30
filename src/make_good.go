@@ -28,15 +28,6 @@ type Stack struct {
 	Value []string
 }
 
-func (s *Stack) get() (bool, string) {
-	if len(s.Value) == 0 {
-		return false, ""
-	}
-	return true, s.Value[len(s.Value)-1]
-}
-
-// is good
-
 // build a stack.
 // method push
 func (s *Stack) push(a string) {
@@ -54,6 +45,15 @@ func (s *Stack) pop() (bool, string) {
 	return true, v
 }
 
+// method: get the top value of stack
+func (s *Stack) get() (bool, string) {
+	if len(s.Value) == 0 {
+		return false, ""
+	}
+	return true, s.Value[len(s.Value)-1]
+}
+
+// method: check is bad character pair if a - 'A' or 'A' - 'a' true
 func isBadThing(a, b string) bool {
 	if a[0]-b[0] == 32 || b[0]-a[0] == 32 {
 		return true
