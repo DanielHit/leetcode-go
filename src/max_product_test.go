@@ -6,18 +6,6 @@ import (
 	"testing"
 )
 
-func Test_isPalindromic(t *testing.T) {
-	is := assert.New(t)
-	s := "aba"
-	is.True(isPalindromic(s))
-	s = "abbccfbba"
-	is.False(isPalindromic(s))
-	s = ""
-	is.True(isPalindromic(s))
-	s = "a"
-	is.True(isPalindromic(s))
-}
-
 func Test_theMaxOddLengthPalindromic(t *testing.T) {
 	s := "abad"
 	is := assert.New(t)

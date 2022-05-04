@@ -15,6 +15,7 @@ func maxProduct(s string) int64 {
 }
 
 // "abacd" is 3
+// marcher的算法 O(n)的时间复杂度.
 func theMaxOddLengthPalindromic(s string) int64 {
 	// 如何思考个人的最长子串.
 	// thinking about the psychology of money
