@@ -31,5 +31,5 @@ func maxSumRangeQuery(nums []int, requests [][]int) int {
 		sum += countMap[v] * nums[len(nums)-1-index]
 	}
 
-	return sum
+	return sum % (1000000000 + 7)
 }
