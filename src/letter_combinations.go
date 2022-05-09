@@ -11,6 +11,7 @@ var letterMap = map[string]string{
 	"9": "wxyz",
 }
 
+// problem:https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 func letterCombinations(digits string) []string {
 
 	res := []string{}
