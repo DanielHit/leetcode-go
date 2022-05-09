@@ -1,7 +1,6 @@
 package src
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -16,12 +15,12 @@ func maxSumRangeQuery(nums []int, requests [][]int) int {
 			}
 		}
 	}
-	fmt.Println(countMap)
 
 	var keys []int
 	for i := range countMap {
 		keys = append(keys, i)
 	}
+
 	sort.SliceStable(keys, func(i, j int) bool {
 		return countMap[keys[i]] > countMap[keys[j]]
 	})
