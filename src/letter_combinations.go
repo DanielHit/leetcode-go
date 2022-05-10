@@ -14,7 +14,7 @@ var letterMap = map[string]string{
 // problem:https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 func letterCombinations(digits string) []string {
 
-	res := []string{}
+	var res []string
 	if len(digits) == 0 {
 		return res
 	}
