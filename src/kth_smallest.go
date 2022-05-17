@@ -1,12 +1,14 @@
 package src
 
+import "github/leetcode-go/src/tree"
+
 // problem: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-func kthSmallest(root *TreeNode, k int) int {
+func kthSmallest(root *tree.TreeNode, k int) int {
 	resList := searchTree(root)
 	return resList[k-1]
 }
 
-func searchTree(root *TreeNode) []int {
+func searchTree(root *tree.TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}

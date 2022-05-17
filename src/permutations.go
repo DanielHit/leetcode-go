@@ -7,7 +7,6 @@ func permuteUniqueTwo(nums []int) [][]int {
 	return res
 }
 
-//
 func recursive(res *[][]int, path []int, start int, nums []int) {
 	if len(path) == 4 {
 		*res = append(*res, path)
@@ -15,7 +14,6 @@ func recursive(res *[][]int, path []int, start int, nums []int) {
 	} else if start < len(nums) {
 		// 先尝试不加元素
 		recursive(res, path, start+1, nums)
-
 		// 加了元素的情况
 		path = append(path, nums[start])
 		recursive(res, path, start+1, nums)

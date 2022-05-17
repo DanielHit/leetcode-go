@@ -1,4 +1,4 @@
-package src
+package back_track
 
 // problem: https://leetcode.com/problems/combination-sum-iii/
 func combinationSum3(k int, n int) [][]int {
