@@ -2,6 +2,7 @@ package back_track
 
 import "fmt"
 
+// https://leetcode.com/problems/vowels-of-all-substrings/
 var vowelMap = map[string]int{
 	"a": 0,
 	"e": 0,
@@ -10,37 +11,31 @@ var vowelMap = map[string]int{
 	"o": 0,
 }
 
-// https://leetcode.com/problems/vowels-of-all-substrings/
 func countVowels(word string) int64 {
-	res := []string{}
-	helper(&res, 0, "", word)
-	count := int64(0)
+	list := []string{}
+	for i := 0; i < len(word); i++ {
+		for j := i; j < len(word); j++ {
+			subString := word[i : j+1]
+			list = append(list, subString)
+		}
+	}
+	fmt.Println(list)
+
+	for _, v := range list {
+		count(v)
+	}
 	fmt.Println(vowelMap)
-	fmt.Println(res)
+	sum := int64(0)
 	for _, v := range vowelMap {
-		count += int64(v)
+		sum += int64(v)
 	}
-	return count
+
+	return sum
 }
-
-func countOfVowels(s string) {
-	for i := 0; i < len(s); i++ {
-		vowelMap[string(s[i])]++
-	}
-}
-
-func helper(res *[]string, start int, substring, word string) {
-
-	if start >= len(word) {
-		*res = append(*res, substring)
-		countOfVowels(substring)
-		return
-	}
-
-	helper(res, start+1, substring, word)
-	for i := start; i < len(word); i++ {
-		substring = word[i : start+1]
-		helper(res, start+1, substring, word)
-		substring = word[i:start]
+func count(substring string) {
+	for i := 0; i < len(substring); i++ {
+		if _, ok := vowelMap[string(substring[i])]; ok {
+			vowelMap[string(substring[i])]++
+		}
 	}
 }
