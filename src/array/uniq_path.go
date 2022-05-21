@@ -62,3 +62,9 @@ func helper(grid [][]int, m *map[string]int, p, q int) int {
 	(*m)[strconv.Itoa(p)+"_"+strconv.Itoa(q)] = sum
 	return sum
 }
+
+// dp的算法再来解决一遍. 思考下解决方案
+func helper_2(grid [][]int) {
+	for j := 0; j < len(grid[0]); j++ {
+	}
+}
