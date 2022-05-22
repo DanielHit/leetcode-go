@@ -64,7 +64,38 @@ func helper(grid [][]int, m *map[string]int, p, q int) int {
 }
 
 // dp的算法再来解决一遍. 思考下解决方案
-func helper_2(grid [][]int) {
-	for j := 0; j < len(grid[0]); j++ {
-	}
-}
+//func helper_2(grid [][]int, res *[][]int) {
+//	if grid[0][0] == 1 {
+//		(*res)[0][0] = 0
+//	} else {
+//		(*res)[0][0] = 1
+//	}
+//
+//	for j := 1; j < len(grid[0]); j++ {
+//		if grid[0][j] == 1 {
+//			res[0][j] = 0
+//		} else {
+//			if
+//		}
+//	}
+//
+//	for i := 0; i < len(grid[0]); i++ {
+//
+//	}
+//
+//	for i := 1; i < len(grid); i++ {
+//		for j := 1; j < len(grid[0]); j++ {
+//			if grid[i][j] == 1 {
+//				(*res)[i][j] = 0
+//			} else {
+//				if ((*res)[i-1][j] > (*res)[i][j-1]) && ((*res)[i-1][j] != 0) {
+//					(*res)[i][j] = (*res)[i][j-1] + 1
+//				} else if ((*res)[i][j-1]) != 0 {
+//					(*res)[i][j] = (*res)[i-1][j] + 1
+//				} else {
+//					(*res)[i][j] = 0
+//				}
+//			}
+//		}
+//	}
+//}
