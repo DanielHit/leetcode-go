@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// solve problem:648. Replace Words
 func replaceWords(dictionary []string, sentence string) string {
 	strList := strings.Split(sentence, " ")
 	sort.SliceStable(dictionary, func(i, j int) bool {
