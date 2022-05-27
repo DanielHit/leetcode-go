@@ -1,13 +1,13 @@
 package rank
 
-func merge_sort(nums []int) []int {
+func mergeSort(nums []int) []int {
 	if len(nums) <= 1 {
 		return nums
 	}
 
 	middle := len(nums) / 2
-	left := merge_sort(nums[:middle])
-	right := merge_sort(nums[middle:])
+	left := mergeSort(nums[:middle])
+	right := mergeSort(nums[middle:])
 
 	i := 0
 	j := 0
@@ -33,4 +33,20 @@ func merge_sort(nums []int) []int {
 	}
 
 	return res
+}
+
+func bubbleSort(nums []int) {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i] > nums[j] {
+				swap(nums, i, j)
+			}
+		}
+	}
+}
+
+func swap(nums []int, i, j int) {
+	temp := nums[i]
+	nums[i] = nums[j]
+	nums[j] = temp
 }
