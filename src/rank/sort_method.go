@@ -1,5 +1,6 @@
 package rank
 
+// mergeSort: 归并排序 分治算法
 func mergeSort(nums []int) []int {
 	if len(nums) <= 1 {
 		return nums
@@ -35,11 +36,28 @@ func mergeSort(nums []int) []int {
 	return res
 }
 
-func bubbleSort(nums []int) {
+// selectSort: 插入排序
+func selectSort(nums []int) {
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i] > nums[j] {
 				swap(nums, i, j)
+			}
+		}
+	}
+}
+
+// todo 统计排序. 统计比当前数字少的
+func staticSort(nums []int) {
+
+}
+
+// bubbleSort: 冒泡排序
+func bubbleSort(nums []int) {
+	for i := 0; i < len(nums); i++ {
+		for j := 0; j < len(nums)-i-1; j++ {
+			if nums[j] > nums[j+1] {
+				swap(nums, j, j+1)
 			}
 		}
 	}
