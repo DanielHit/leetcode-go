@@ -16,3 +16,8 @@ func Test_minimumTotal(t *testing.T) {
 	assert.Equal(t, minimumTotal(triangle), -10)
 
 }
+
+func Test_minimumTotalDp(t *testing.T) {
+	triangle := [][]int{{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}}
+	assert.Equal(t, minimumTotalDp(triangle), 11)
+}

@@ -12,6 +12,39 @@ func minimumTotal(triangle [][]int) int {
 	return min
 }
 
+// use dp method
+func minimumTotalDp(triangle [][]int) int {
+	var dp [][]int
+	for i := 0; i < len(triangle); i++ {
+		dp = append(dp, make([]int, len(triangle[i])))
+	}
+
+	// dp[index][i] = dp
+	dp[0][0] = triangle[0][0]
+	for i := 1; i < len(triangle); i++ {
+		dp[i][0] = dp[i-1][0] + triangle[i][0]
+		for j := 1; j < len(triangle[i]); j++ {
+			if j >= len(dp[i-1]) {
+				dp[i][j] = dp[i-1][j-1] + triangle[i][j]
+			} else {
+				if dp[i-1][j-1] < dp[i-1][j] {
+					dp[i][j] = dp[i-1][j-1] + triangle[i][j]
+				} else {
+					dp[i][j] = dp[i-1][j] + triangle[i][j]
+				}
+			}
+		}
+	}
+
+	min := math.MaxInt32
+	for i := 0; i < len(triangle[len(triangle)-1]); i++ {
+		if dp[len(triangle)-1][i] < min {
+			min = dp[len(triangle)-1][i]
+		}
+	}
+	return min
+}
+
 func minimumTotalHelper(triangle [][]int, start int, path []int, sum int, min *int) {
 	if len(path) == len(triangle) {
 		if sum < *min {
