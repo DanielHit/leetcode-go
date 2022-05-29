@@ -21,9 +21,9 @@ func dominantIndex(nums []int) int {
 			second = first
 			first = temp
 
-			temp_index := secondIndex
+			tempIndex := secondIndex
 			secondIndex = firstIndex
-			firstIndex = temp_index
+			firstIndex = tempIndex
 		}
 	}
 
