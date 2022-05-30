@@ -1,5 +1,10 @@
 package rank
 
+import (
+	"fmt"
+	"math"
+)
+
 // mergeSort: 归并排序 分治算法
 func mergeSort(nums []int) []int {
 	if len(nums) <= 1 {
@@ -48,11 +53,37 @@ func selectSort(nums []int) {
 }
 
 // todo 统计排序. 统计比当前数字少的
-func staticSort(nums []int) {
-	countMap := map[int]int{}
-	for i := 0; i < len(nums); i++ {
-
+func countSort(nums []int) {
+	if len(nums) <= 0 {
+		return
 	}
+
+	min := math.MaxInt32
+	max := math.MinInt32
+	for _, v := range nums {
+		if v > max {
+			max = v
+		}
+		if v < min {
+			min = v
+		}
+	}
+	fmt.Println(min, max)
+	count := make([]int, max-min+1)
+	fmt.Println(len(count))
+	for _, v := range nums {
+		count[v-min]++
+	}
+
+	i := 0
+	for num := min; num <= max; num++ {
+		for count[num-min] > 0 {
+			nums[i] = num
+			i++
+			count[num-min]--
+		}
+	}
+
 }
 
 // bubbleSort: 冒泡排序

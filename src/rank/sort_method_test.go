@@ -67,3 +67,25 @@ func Test_bubbleSort(t *testing.T) {
 	bubbleSort(nums)
 	assert.Equal(t, nums, []int{})
 }
+
+func TestCountSort(t *testing.T) {
+	nums := []int{4, 5, 2, 7, 9, 3}
+	countSort(nums)
+	assert.Equal(t, nums, []int{2, 3, 4, 5, 7, 9})
+
+	nums = []int{4, 5, 2}
+	countSort(nums)
+	assert.Equal(t, nums, []int{2, 4, 5})
+
+	nums = []int{5, 2}
+	countSort(nums)
+	assert.Equal(t, nums, []int{2, 5})
+
+	nums = []int{2}
+	countSort(nums)
+	assert.Equal(t, nums, []int{2})
+
+	nums = []int{}
+	countSort(nums)
+	assert.Equal(t, nums, []int{})
+}
