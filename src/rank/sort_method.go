@@ -49,7 +49,10 @@ func selectSort(nums []int) {
 
 // todo 统计排序. 统计比当前数字少的
 func staticSort(nums []int) {
+	countMap := map[int]int{}
+	for i := 0; i < len(nums); i++ {
 
+	}
 }
 
 // bubbleSort: 冒泡排序
