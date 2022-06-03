@@ -1,7 +1,9 @@
 package array
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
+	"sync"
 	"testing"
 )
 
@@ -16,4 +18,16 @@ func Test_arraySign(t *testing.T) {
 	nums = []int{-1, 1, -1, 1, -1}
 	is.Equal(arraySign(nums), -1)
 
+}
+
+func TestArray(t *testing.T) {
+	preorder := []int{3, 9, 20, 15, 7}
+	fmt.Println(preorder[0:1])
+	fmt.Println(preorder[1:])
+	fmt.Println(preorder[1:2])
+	fmt.Println(preorder[1:3])
+	wc := sync.WaitGroup{}
+	wc.Add(2)
+	go func() {
+	}()
 }
