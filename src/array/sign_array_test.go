@@ -28,6 +28,4 @@ func TestArray(t *testing.T) {
 	fmt.Println(preorder[1:3])
 	wc := sync.WaitGroup{}
 	wc.Add(2)
-	go func() {
-	}()
 }
